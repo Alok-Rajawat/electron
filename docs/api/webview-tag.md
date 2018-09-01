@@ -276,6 +276,12 @@ webview.addEventListener('dom-ready', () => {
 Loads the `url` in the webview, the `url` must contain the protocol prefix,
 e.g. the `http://` or `file://`.
 
+#### `contents.downloadURL(url)`
+
+* `url` String
+
+Initiates a download of the resource at `url` without navigating.
+
 ### `<webview>.getURL()`
 
 Returns `String` - The URL of guest page.
@@ -287,6 +293,11 @@ Returns `String` - The title of guest page.
 ### `<webview>.isLoading()`
 
 Returns `Boolean` - Whether guest page is still loading resources.
+
+### `<webview>.isLoadingMainFrame()`
+
+Returns `Boolean` - Whether the main frame (and not just iframes or frames within it) is
+still loading.
 
 ### `<webview>.isWaitingForResponse()`
 
@@ -411,7 +422,7 @@ Set guest page muted.
 
 Returns `Boolean` - Whether guest page has been muted.
 
-#### `<webview>.isCurrentlyAudible()`
+### `<webview>.isCurrentlyAudible()`
 
 Returns `Boolean` - Whether audio is currently playing.
 
